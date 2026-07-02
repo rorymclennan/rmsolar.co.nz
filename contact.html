@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript">
+
+    function Hide() {
+        var element = document.getElementById("fullScreenPicture");
+        element.classList.remove("showBigPic");
+    }
+
+    function showMobileMenu() {
+        var mobileNav = document.getElementById("mobile-nav");
+        var mobileMenuButton= document.getElementById("moblie-menu-btn");
+        if (mobileNav.style.display === "block") {
+            mobileNav.style.display = "none";
+            mobileMenuButton.removeAttribute("fa fa-times")
+            mobileMenuButton.setAttribute("class", "fa fa-bars fa-2x")
+        } else {
+            mobileNav.style.display = "block";
+            mobileMenuButton.removeAttribute("fa fa-bars")
+            mobileMenuButton.setAttribute("class", "fa fa-times fa-2x")
+        }
+    }
+
+    function ToggleMoreInfo(serviceClicked){
+  
+          switch (serviceClicked) {
+             case 'singledogPrice':
+                 $( "#singledogPrice" ).slideToggle('fast' )
+                  break;
+             case 'groupdogwalking':
+                $( "#groupdogwalking" ).slideToggle('fast' )
+                break;
+            case 'housesitting':
+                $( "#housesitting" ).slideToggle('fast' )
+               break;      
+            case 'addServices':
+                $( "#addServices" ).slideToggle('fast' )
+               break;
+            default:
+        };
+    }
+
+    function ShowContactForm(){
+        var a = document.getElementById("contactForm");
+        if (a.style.display === "block") {
+            a.style.display = "none";
+        
+        } else {
+            a.style.display = "block";
+        
+        }
+    }
+   </script>
+
+
+    <body  >  
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <title>Contact Whitby barking mad dog walks nz</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+    
+            <link rel="stylesheet" href="/css/main.css">
+         
+    
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+          
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>   
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+       
+        </head>
+    
+         <header class="flex-container">
+
+            <div style=" width:95%; height:auto">
+                <a href="/"><img src="/images/logo.PNG" alt=""  id="logo" width="300px"  height="80px"  ></a>
+
+               <a id="mobile-menu" href="javascript:void(0);" class="icon" onclick="showMobileMenu()">
+                   <i id="moblie-menu-btn" style="color:black;" class="fa fa-bars fa-2x"></i>
+               </a>     
+               <div id="pc-nav"  >
+                   <ul>
+                       <li><a href="/">Services</a></li> 
+                       <li><a href="/about">About Lauren</a></li> 
+                       <li><a href="/contact">Contact Lauren</a></li>
+                       <li><a href="/FAQ">FAQ</a></li>
+                   </ul>
+               </div>
+           </div> 
+           <a name="services"></a>     
+           <div id="mobile-nav" style="display: none;">
+               <div style="border-top:1px solid black;padding: 20px;">
+                <a onclick="showMobileMenu()" href="/">Services </a>
+
+               <a onclick="showMobileMenu()" href="/about">About Lauren</a>
+               <a onclick="showMobileMenu()" href="/contact">Contact Lauren</a>
+               <a onclick="showMobileMenu()" href="/FAQ">FAQ</a>
+               </div>
+           </div>
+      
+       </header>  
+  
+     <div id="contactForm" >
+          
+        <h2 style="text-align: center;margin-bottom: 30px;">Contact Me</h2>
+        <form  id="app"  @submit="checkForm"  action="/form" method="POST">
+
+            <p v-if="errors.length" >
+                <b>Please correct the following error(s):</b>
+                <ul style="margin-bottom: 40px;"></ul>
+                  <li v-for="error in errors" style="color: black;width:100%; "style="margin-bottom:5px;">{{ error }}</li>
+                </ul>
+            </p>
+
+            
+            <div style="height:60px;">
+            <h4 class="contactlabel"  >Name<span style="color:red;">*</span></h4>
+            <input class="contactInput" type="text" name="name"  v-model="name">
+            </div>
+
+            <div style="height:auto;">
+            <h4  class="contactlabel">Phone Number<span style="color:red;">*</span></h4>
+            <input class="contactInput" type="text" name="number"  v-model="number">
+            </div>
+
+            
+            <div style="height:60px;">
+                <h4  class="contactlabel" >Email<span style="color:red;">*</span></h4>
+                <input class="contactInput" type="text" name="email" id="email" v-model="email">
+                </div>
+
+            <div style="height:60px;">
+                <h4  class="contactlabel">Service<span style="color:red;">*</span></h4>
+            
+                <select class="contactInput" id="country" name="option" v-model="option">
+                <option value=""></option>
+                <option value="SoloDogWalk">Solo Dog Walk</option>
+                <option value="GroupDogWalk">Group Dog Walk</option>
+                <option value="HouseSitting">House Sitting</option>
+                <option value="other">Other - Request</option>
+                </select>
+            </div>
+
+            <div style="height: 200px; width:100%; display: inline-block;">
+                <h4>Message <span style="color:red;">*</span></h4>
+                <textarea name="message" v-model="message" ></textarea>
+            </div>
+            <input :disabled="isActive" type="submit" value="Submit" class="button" style="margin: auto;"></input>
+        </form>
+     </div> 
+
+     <div style="height: 80px; width:100%;"></div> 
+     <script src="/Js/myvue.js"></script>
+     <footer ><p>	&copy; Barkingmaddogwalks </p></footer>
+    </body>
+ 
+</html>

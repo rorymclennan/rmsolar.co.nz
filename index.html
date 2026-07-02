@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RM Solar | Solar, Batteries & EV Charging Wellington</title>
+  <meta name="description" content="RM Solar designs and installs solar, battery storage, EV chargers, off-grid and commercial solar systems across Wellington, Porirua, Hutt Valley, Kāpiti and Wairarapa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #07304a;
+      --navy-2: #0c3f5e;
+      --orange: #ff9f1c;
+      --cream: #fff8e8;
+      --soft: #f4f7f8;
+      --text: #1f2933;
+      --muted: #5f6f7a;
+      --white: #ffffff;
+      --border: #d9e2e7;
+      --shadow: 0 18px 45px rgba(7, 48, 74, 0.14);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -.02em;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #161616;
+      box-shadow: 0 10px 24px rgba(255,159,28,.28);
+    }
+
+    .btn-secondary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.45);
+      color: var(--white);
+    }
+
+    .hero {
+      background:
+        linear-gradient(110deg, rgba(7,48,74,.93), rgba(7,48,74,.72)),
+        url('/images/Solar8.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 86px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .96;
+      letter-spacing: -.06em;
+      margin: 0 0 22px;
+      max-width: 850px;
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2vw, 22px);
+      max-width: 680px;
+      color: rgba(255,255,255,.9);
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .trust-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      color: rgba(255,255,255,.92);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .trust-list li::before {
+      content: "✓";
+      color: var(--orange);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    .hero-card p {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card .contact-line {
+      display: block;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,.18);
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    section { padding: 78px 0; }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      color: var(--navy);
+      margin: 0;
+    }
+
+    .section-heading p {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(7,48,74,.06);
+    }
+
+    .card .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--cream);
+      color: var(--orange);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .why {
+      background: var(--soft);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px 18px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .feature-list span {
+      display: block;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .photo-panel {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 420px;
+      background: url('/images/Solar7.jpg') center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .areas {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .areas h2 { color: var(--white); }
+    .areas p { color: rgba(255,255,255,.8); }
+
+    .area-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: 700;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .gallery img:nth-child(1),
+    .gallery img:nth-child(6) {
+      grid-column: span 2;
+    }
+
+    .reviews {
+      background: var(--cream);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .review {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid rgba(7,48,74,.1);
+    }
+
+    .stars {
+      color: var(--orange);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .review p {
+      color: var(--text);
+      margin: 0 0 14px;
+    }
+
+    .review strong {
+      color: var(--navy);
+    }
+
+    .contact {
+      background:
+        linear-gradient(110deg, rgba(7,48,74,.96), rgba(12,63,94,.92)),
+        url('/images/Solar15.jpg') center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .contact-box {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,.86);
+      margin: 0;
+      max-width: 720px;
+      font-size: 18px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 230px;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #061f31;
+      color: rgba(255,255,255,.75);
+      font-size: 14px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid, .why-grid, .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading p {
+        margin-top: 12px;
+      }
+
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .brand img { width: 120px; }
+      .nav { min-height: 74px; }
+      .hero { padding: 64px 0 56px; }
+      .trust-list { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery img, .gallery img:nth-child(1), .gallery img:nth-child(6) {
+        grid-column: auto;
+        height: 250px;
+      }
+      .contact-actions {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="/images/RMSolar.png" alt="RM Solar logo">
+      </a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Our work</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-secondary" href="tel:0276300324">Call 027 630 0324</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Wellington solar installer</div>
+          <h1>Solar, batteries & EV charging installed properly.</h1>
+          <p>RM Solar designs and installs high-quality solar, battery storage, EV charging, commercial and off-grid systems across Wellington, Porirua, the Hutt Valley, Kāpiti and Wairarapa.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:info@rmsolar.co.nz?subject=Solar%20quote%20request">Get a free quote</a>
+            <a class="btn btn-outline" href="tel:0276300324">Call Rory</a>
+          </div>
+          <ul class="trust-list">
+            <li>Registered electrician</li>
+            <li>10+ years solar experience</li>
+            <li>SEANZ approved installer</li>
+            <li>Owner-operated and local</li>
+          </ul>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Practical advice before you spend money.</h3>
+          <p>Send through your address and a recent power bill and we’ll give you an honest view on what size system makes sense.</p>
+          <a class="contact-line" href="mailto:info@rmsolar.co.nz">info@rmsolar.co.nz</a>
+          <a class="contact-line" href="tel:0276300324">027 630 0324</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Solar services for homes, businesses and off-grid sites.</h2>
+          <p>From simple grid-tied solar through to battery backup and full off-grid systems, RM Solar designs around your site, power usage and budget.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card"><div class="icon">☀</div><h3>Home solar</h3><p>Grid-tied solar systems designed to reduce power bills and make better use of daytime energy.</p></article>
+          <article class="card"><div class="icon">🔋</div><h3>Battery storage</h3><p>Store solar energy, reduce peak usage and add backup power options for outages.</p></article>
+          <article class="card"><div class="icon">⚡</div><h3>EV chargers</h3><p>Safe, tidy EV charger installs for homes and businesses, including smart charging options.</p></article>
+          <article class="card"><div class="icon">🏡</div><h3>Off-grid systems</h3><p>Solar, battery and generator-integrated systems for lifestyle blocks, sheds and remote properties.</p></article>
+          <article class="card"><div class="icon">🏢</div><h3>Commercial solar</h3><p>Solar design and installation for workshops, offices, schools and commercial sites.</p></article>
+          <article class="card"><div class="icon">🛠</div><h3>Repairs & upgrades</h3><p>Inverter replacements, monitoring fixes, system checks and performance improvements.</p></article>
+          <article class="card"><div class="icon">📊</div><h3>Monitoring</h3><p>Upgrade system visibility so you can see generation, usage, battery state and export clearly.</p></article>
+          <article class="card"><div class="icon">✅</div><h3>Good advice</h3><p>No pressure selling. Just practical recommendations based on your actual usage and property.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container why-grid">
+        <div>
+          <div class="section-heading">
+            <div>
+              <h2>Why RM Solar?</h2>
+              <p>You're dealing directly with a local solar specialist, not a call centre or sales team.</p>
+            </div>
+          </div>
+          <ul class="feature-list">
+            <li>Registered electrician <span>Electrical work completed properly, safely and to New Zealand requirements.</span></li>
+            <li>Solar experience that matters <span>10+ years working with grid-tied, hybrid, commercial and off-grid systems.</span></li>
+            <li>Owner-operated <span>Advice, design and installation from someone who actually understands the work.</span></li>
+            <li>SEANZ approved <span>A professional solar installer with industry credibility.</span></li>
+          </ul>
+        </div>
+        <div class="photo-panel" aria-label="Solar installation photo"></div>
+      </div>
+    </section>
+
+    <section class="areas">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Local to Wellington. Working across the lower North Island.</h2>
+          <p>RM Solar services Wellington, Porirua, the Hutt Valley, Kāpiti and the Wairarapa.</p>
+        </div>
+        <div class="area-pills">
+          <span class="pill">Wellington</span>
+          <span class="pill">Porirua</span>
+          <span class="pill">Hutt Valley</span>
+          <span class="pill">Kāpiti Coast</span>
+          <span class="pill">Wairarapa</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Recent work</h2>
+          <p>Real installations completed by RM Solar. Add your best rooftop, battery, EV charger and commercial photos here.</p>
+        </div>
+
+        <div class="gallery">
+          <img src="/images/Solar15.jpg" alt="Solar panel installation by RM Solar">
+          <img src="/images/Solar16.jpg" alt="Solar array installation">
+          <img src="/images/Solar13.jpg" alt="Solar panels on roof">
+          <img src="/images/Solar11.jpg" alt="Roof solar installation">
+          <img src="/images/Solar10.jpeg" alt="Solar installation detail">
+          <img src="/images/Solar8.jpg" alt="Residential solar installation">
+          <img src="/images/Solar2.jpg" alt="RM Solar project photo">
+          <img src="/images/Solar7.jpg" alt="Solar project in Wellington region">
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Google reviews</h2>
+          <p>Add your best Google reviews here, or link directly to your Google Business profile.</p>
+        </div>
+
+        <div class="review-grid">
+          <article class="review"><div class="stars">★★★★★</div><p>“Add a short Google review here.”</p><strong>Customer name</strong></article>
+          <article class="review"><div class="stars">★★★★★</div><p>“Add a second review here that mentions good communication, tidy work or a great result.”</p><strong>Customer name</strong></article>
+          <article class="review"><div class="stars">★★★★★</div><p>“Add a third review here from a solar, battery or EV charger customer.”</p><strong>Customer name</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2>Ready to look at solar?</h2>
+            <p>Email your address and a recent power bill, or call Rory for practical advice on solar, batteries, EV charging or off-grid systems.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:info@rmsolar.co.nz?subject=Solar%20quote%20request">Email info@rmsolar.co.nz</a>
+            <a class="btn btn-outline" href="tel:0276300324">Call 027 630 0324</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© RM Solar</span>
+      <span>Solar, batteries & EV charging across Wellington, Porirua, Hutt Valley, Kāpiti and Wairarapa.</span>
+    </div>
+  </footer>
+</body>
+</html>

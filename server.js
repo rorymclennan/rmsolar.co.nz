@@ -14,6 +14,7 @@ app.use(fileUpload( {useTempFiles : true,
  app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '/Public')));
+app.use('/Public', express.static(path.join(__dirname, '/Public')));
 
 app.get('/', function (req, res) {
     res.sendFile( __dirname + "/" + "index.html" );
